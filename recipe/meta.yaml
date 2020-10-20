@@ -1,4 +1,4 @@
-{% set version = "0.3" %}
+{% set version = "0.4.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,12 +11,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/labeling_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/labeling/labeling_{{ version }}.tar.gz
-  sha256: 0d8069eb48e91f6f6d6a9148f4e2dc5026cabead15dd15fc343eff9cf33f538f
+  sha256: e022d79276173e0d62bf9e37d7574db65ab439eb2ae1833e460b1cff529bd165
 
 build:
   noarch: generic
   merge_build_host: true  # [win]
-  number: 1003
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
