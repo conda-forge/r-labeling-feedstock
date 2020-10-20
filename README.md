@@ -5,11 +5,9 @@ Home: https://CRAN.R-project.org/package=labeling
 
 Package license: MIT OR Unlimited
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-labeling-feedstock/blob/master/LICENSE.txt)
 
 Summary: Provides a range of axis labeling algorithms
-
-
 
 Current build status
 ====================
