@@ -1,4 +1,4 @@
-{% set version = "0.4.2" %}
+{% set version = '0.4.2' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,16 +7,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: labeling_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/labeling_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/labeling/labeling_{{ version }}.tar.gz
   sha256: e022d79276173e0d62bf9e37d7574db65ab439eb2ae1833e460b1cff529bd165
 
 build:
+  merge_build_host: True  # [win]
+  number: 1
   noarch: generic
-  merge_build_host: true  # [win]
-  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -24,6 +23,7 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
   run:
@@ -36,19 +36,29 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=labeling
-  license: MIT OR Unlimited
-  summary: Provides a range of axis labeling algorithms
+  license: MIT
+  summary: Functions which provide a range of axis labeling algorithms.
   license_family: MIT
-
   license_file:
-    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
     - LICENSE
+
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+
+# Package: labeling
+# Type: Package
+# Title: Axis Labeling
+# Version: 0.4.2
+# Date: 2020-10-15
+# Author: Justin Talbot,
+# Maintainer: Nuno Sempere <nuno.semperelh@gmail.com>
+# Description: Functions which provide a range of axis labeling algorithms.
+# License: MIT + file LICENSE | Unlimited
+# Collate: 'labeling.R'
+# NeedsCompilation: no
+# Imports: stats, graphics
+# Packaged: 2020-10-18 12:56:46 UTC; nuno
+# Repository: CRAN
+# Date/Publication: 2020-10-20 07:00:09 UTC
