@@ -1,11 +1,11 @@
-About r-labeling
-================
+About r-labeling-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-labeling-feedstock/blob/main/LICENSE.txt)
 
 Home: https://CRAN.R-project.org/package=labeling
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-labeling-feedstock/blob/main/LICENSE.txt)
 
 Summary: Functions which provide a range of axis labeling algorithms.
 
